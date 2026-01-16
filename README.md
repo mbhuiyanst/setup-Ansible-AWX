@@ -2,19 +2,19 @@
 Here I will present how to install ansible AWX on ubuntu 24 using kubernetes k3s
 
 
-####### 1. Update the system ######
+####### Update the system ######
 sudo apt update
 sudo apt upgrade -y
 
-##### 2. Install k3s #####
+#####  Install k3s #####
 curl -sfL https://get.k3s.io | sh -
 
-##### 3. Give Non-root User Access to K3s Config ######
+#####  Give Non-root User Access to K3s Config ######
 
 sudo chown $USER:$USER /etc/rancher/k3s/k3s.yaml
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
-##### 4. Verify Kubernetes Cluster ####
+#####  Verify Kubernetes Cluster ####
 
 kubectl get nodes
 kubectl get pods -A
